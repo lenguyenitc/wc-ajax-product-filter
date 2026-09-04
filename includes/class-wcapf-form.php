@@ -177,7 +177,6 @@ class WCAPF_Form {
 	protected function render_price_filter( $field_instance ) {
 		$filter_type = new WCAPF_Filter_Type_Price( $field_instance );
 		$range       = $filter_type->get_items();
-
 		$this->before_filter( $field_instance );
 		$this->render_number_inputs( $field_instance, $range );
 		$this->after_filter();
@@ -284,7 +283,7 @@ class WCAPF_Form {
 		}
 
 		if ( 'keyword' === $type && WCAPF_Helper::get_applied_keyword() ) {
-			$classes[] = 'search-active';
+			$classes[] = 'search-active ';
 		}
 
 		return $classes;
@@ -472,12 +471,14 @@ class WCAPF_Form {
 		if ( ! in_array( $field_instance->filter_type, $valid_types ) ) {
 			return;
 		}
-
+		//Minh custom
 		$walker = new WCAPF_Walker( $field_instance );
-
-		$this->before_filter( $field_instance );
-		echo $walker->build_menu();
-		$this->after_filter();
+        $items = $walker->get_items();
+        if(!empty($items)){
+        	$this->before_filter( $field_instance );
+            echo $walker->build_menu();
+            $this->after_filter();
+        }
 	}
 
 	private function is_debugging() {

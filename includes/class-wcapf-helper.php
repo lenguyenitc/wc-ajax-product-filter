@@ -528,7 +528,7 @@ class WCAPF_Helper {
 
 			$html .= '<button ' . $attrs . '>';
 			$html .= '<span class="wcapf-nav-item-text">'; // To avoid the flex wrap issue.
-			$html .= wp_kses_post( $label );
+			$html .=  apply_filters('cs_filter_lable', wp_kses_post( $label ) );
 			$html .= '</span>';
 			$html .= '<span class="wcapf-cross-sign">&#215;</span>';
 			$html .= '</button>';

@@ -349,6 +349,12 @@ class WCAPF_Walker {
 
 		return $items;
 	}
+    
+    
+    public function get_items(){
+		return $this->items;
+	}
+
 
 	/**
 	 * The active filters.

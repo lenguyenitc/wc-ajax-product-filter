@@ -160,7 +160,7 @@ class WCAPF_Frontend_Scripts {
 		 * @source https://stackoverflow.com/a/27598883
 		 */
 		$deps[] = 'jquery-effects-core';
-
+		$ext = '.js';
 		wp_enqueue_script(
 			'wc-ajax-product-filter-scripts',
 			WCAPF_PLUGIN_URL . 'public/js/wc-ajax-product-filter-scripts' . $ext,

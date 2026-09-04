@@ -53,13 +53,24 @@ if ( $enable_accordion ) {
 			class="wcapf-filter-accordion-trigger"
 			aria-controls="<?php echo esc_attr( $accordion_panel_id ); ?>"
 			aria-expanded="<?php echo esc_attr( $is_expanded ); ?>"
+			aria-label="<?php echo esc_attr( sprintf( __( 'Toggle %s filter', 'wcapf' ), $filter_title ) ); ?>"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				width="24px" height="24px"
-				viewBox="0 0 24 24" fill="none">
-				<path d="M4 8L12 16L20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-					  stroke-linejoin="round" />
+				width="24px"
+				height="24px"
+				viewBox="0 0 24 24"
+				fill="none"
+				aria-hidden="true"
+				focusable="false"
+			>
+				<path
+					d="M4 8L12 16L20 8"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				/>
 			</svg>
 		</button>
 	<?php endif; ?>
